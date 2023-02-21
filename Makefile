@@ -1,7 +1,10 @@
+JOBNAME = module-name-summary
+COMPILE = pdflatex -jobname=$(JOBNAME) summary
+
 all:
-	pdflatex summary
-	bibtex summary
-	pdflatex summary
-	pdflatex summary
+	$(COMPILE)
+	bibtex $(JOBNAME)
+	$(COMPILE)
+	$(COMPILE)
 clean:
 	rm -rf *.aux *.toc *.log *.out *.bbl *.blg chapters/*.aux
